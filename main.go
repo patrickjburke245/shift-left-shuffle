@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"crypto/elliptic"
 	"fmt"
 	"log"
 
@@ -93,6 +94,11 @@ func main() {
 	for _, v := range clusters.Urls {
 		fmt.Println(v)
 	}
+
+	//to delete -- not relevant to app
+	curve := elliptic.P256()
+	fmt.Printf("Curve name: P-256\n")
+	fmt.Printf("Bit size: %d\n", curve.Params().BitSize)
 }
 
 // getAccountInfo retrieves the AWS account ID
